@@ -4,6 +4,7 @@ import time
 import sys
 
 TIME_FOR_ACTION_TO_FINISH = 5
+URL = "https://my.yad2.co.il/login.php"
 
 
 def init_driver(url, chrome_driver_path):
@@ -53,7 +54,7 @@ if __name__ == "__main__":
     yad2_password = sys.argv[3]
     yad2_item_name = sys.argv[4]
     yad2_item_iframe = sys.argv[5]
-    driver = init_driver("https://my.yad2.co.il/login.php", chrome_driver_path)
+    driver = init_driver(URL, chrome_driver_path)
     login(driver, yad2_username, yad2_password)
     bounce_post(driver, yad2_item_name, yad2_item_iframe)
     driver.close()

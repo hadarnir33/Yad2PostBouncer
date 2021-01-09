@@ -10,7 +10,7 @@ URL = "https://my.yad2.co.il/login.php"
 
 def init_logger():
     logging.basicConfig(
-        filename='logs/app.log',
+        filename='app.log',
         level=logging.INFO,
         format='%(asctime)s %(message)s',
         datefmt='%m/%d/%Y %I:%M:%S %p'

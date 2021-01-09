@@ -62,12 +62,17 @@ def wait_for_action_to_finish():
 if __name__ == "__main__":
     init_logger()
     logging.info('Running app.py')
-    chrome_driver_path = sys.argv[1]
-    yad2_username = sys.argv[2]
-    yad2_password = sys.argv[3]
-    yad2_item_name = sys.argv[4]
-    yad2_item_iframe = sys.argv[5]
-    logging.info("The item is {}".format(yad2_item_name))
+    try:
+        chrome_driver_path = sys.argv[1]
+        yad2_username = sys.argv[2]
+        yad2_password = sys.argv[3]
+        yad2_item_name = sys.argv[4]
+        yad2_item_iframe = sys.argv[5]
+        logging.info("The item is {}".format(yad2_item_name))
+    except:
+        e = sys.exc_info()[0]
+        logging.error(e)
+        exit(1)
     try:
         driver = init_driver(URL, chrome_driver_path)
         login(driver, yad2_username, yad2_password)

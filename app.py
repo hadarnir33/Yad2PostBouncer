@@ -38,7 +38,7 @@ def login(driver, yad2_username, yad2_password):
 
 
 def bounce_post(driver, yad2_item_name, yad2_item_iframe):
-    posts_link = driver.find_element_by_link_text("מכירות יד שנייה (2)")
+    posts_link = driver.find_element_by_partial_link_text("מכירות יד שנייה")
     posts_link.click()
     wait_for_action_to_finish()
     item_td = driver.find_element_by_xpath(
